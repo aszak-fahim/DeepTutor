@@ -1,3 +1,6 @@
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
+Failed to create stream fd: Operation not permitted
 # Contributing to DeepTutor
 
 **English** | [简体中文](CONTRIBUTING_CN.md)
@@ -142,3 +145,13 @@ pre-commit install
 
 Then branch from `dev` (`git checkout -b fix/short-name`). Keep build outputs,
 runtime data and `node_modules` out of Git.
+
+---
+
+## AI Teacher fork workflow
+
+This fork follows the upstream `dev` contribution target unless its maintainers explicitly designate a different integration branch. Do not commit directly to `main`. Use short-lived branch names such as `feat/<short-description>`, `fix/<short-description>`, `docs/<short-description>`, `refactor/<short-description>`, or `chore/<short-description>`. Keep one coherent change per PR and use the upstream commit format (`feat: ...`, `fix: ...`, `docs: ...`, `refactor: ...`, `test: ...`, or `chore: ...`).
+
+Before proposing product behavior, state the selected learner, subject/level, curriculum, language, and acceptance criteria, or mark them as unresolved. For tutoring or retrieval changes, include reproducible evidence and evaluation results. For content changes, record source, license, attribution, and permitted use. Never include API keys, learner records, or unredacted private logs in commits or PRs.
+
+Choose local checks based on the changed code and follow [`docs-for-dev/TESTING.md`](docs-for-dev/TESTING.md). Python changes generally need relevant pytest coverage and Ruff; web changes need relevant typecheck/lint/tests; API schema changes need regenerated contracts. Include the commands and results in the PR. Authentication, authorization, code execution, deployment, and release changes require review by a maintainer responsible for that area.
